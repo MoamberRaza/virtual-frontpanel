@@ -24,7 +24,8 @@ export default function LogoSection({ isIcon, sx, to }: Props) {
 
   return (
     <ButtonBase disableRipple {...(isLoggedIn && { component: Link, to: !to ? APP_DEFAULT_PATH : to, sx })}>
-      {isIcon ? <LogoIcon /> : <Logo />}
+      {/* {isIcon ? <LogoIcon /> : <Logo />} */}
+      {/* <p style={{fontWeight:'bold', fontSize:40}}>Virtual Panel</p> */}
     </ButtonBase>
   );
 }

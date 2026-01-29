@@ -11,8 +11,8 @@ import SimpleLayout from 'layout/Simple';
 import Loadable from 'components/Loadable';
 
 // render - landing page
-// const PagesLanding = Loadable(lazy(() => import('pages/landing')));
-const PagesLanding = Loadable(lazy(() => import('pages/auth/auth1/login')));
+const PagesLanding = Loadable(lazy(() => import('pages/landing')));
+// const PagesLanding = Loadable(lazy(() => import('pages/auth/auth1/login')));
 
 // ==============================|| ROUTES RENDER ||============================== //
 

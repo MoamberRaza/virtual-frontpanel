@@ -26,13 +26,11 @@ export default function App() {
         <Locales>
           <ScrollTop>
             <AuthProvider>
-              <>
-                <Notistack>
-                  <RouterProvider router={router} />
-                  <Customization />
-                  <Snackbar />
-                </Notistack>
-              </>
+              <Notistack>
+                <RouterProvider {...{ router }} />
+                {/* <Customization /> */}
+                <Snackbar />
+              </Notistack>
             </AuthProvider>
           </ScrollTop>
         </Locales>
