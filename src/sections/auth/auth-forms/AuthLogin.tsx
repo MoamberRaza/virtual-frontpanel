@@ -46,14 +46,15 @@ export default function AuthLogin({ forgot }: { forgot?: string }) {
     event.preventDefault();
   };
 
+  let email = `info@phoenixcoded.co`;
+  let password = `123456`;
+
+  // email = `super@admin.com`;
+  // password = `Admin@123`
   return (
     <>
       <Formik
-        initialValues={{
-          email: 'info@phoenixcoded.co',
-          password: '123456',
-          submit: null
-        }}
+        initialValues={{ email, password, submit: null }}
         validationSchema={Yup.object().shape({
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
           password: Yup.string().max(255).required('Password is required')

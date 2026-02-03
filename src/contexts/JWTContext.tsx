@@ -13,7 +13,11 @@ import Loader from 'components/Loader';
 import axios from 'utils/axios';
 import { KeyedObject } from 'types/root';
 import { AuthProps, JWTContextType } from 'types/auth';
+// import { UserResponseDto } from '@virtual-crm/types';
+const loginApiUrl = `auth/login`;
+const loginApiUrlMock = `/api/account/login`;
 
+// const a: UserResponseDto = { id: 'x' };
 const chance = new Chance();
 
 // constant
@@ -83,8 +87,13 @@ export const JWTProvider = ({ children }: { children: React.ReactElement }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    const response = await axios.post('/api/account/login', { email, password });
+    let response = await axios.post(loginApiUrlMock, { email, password });
+    // const response = await axios.post(loginApiUrl, { email, password, forceLogout: true });
+    console.log(response.data);
     const { serviceToken, user } = response.data;
+    console.log(user);
+    console.log(serviceToken);
+
     setSession(serviceToken);
     dispatch({
       type: LOGIN,
